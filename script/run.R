@@ -5,6 +5,7 @@ alchemyMLPipelineSetup <- function (pipelinename ="hello-ml-alchemy", pipelineve
   # recommend one repo per version
   # stacking folders hosts all methods for stacking
   # rfs_xgboost hosts all hyper parameter tunning methods for random forest xgboost
+  # logging.R light package runs first closes last/crash
 
   getwdval <- getwd()
   sprintf("working directory: %s", getwdval )

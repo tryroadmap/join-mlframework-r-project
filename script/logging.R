@@ -1,9 +1,9 @@
 kaggleAlchemyLogger <- function(){
-#connect to /log folder
-#ts(timestamp)
-#cat("hello kaggle alchemy") ps id number
+# connect to /log folder
+# ts(timestamp)
+# cat("hello kaggle alchemy") ps id number
 
-
+library(lubridate)
 timestamp_now_ <- now()
 sys_user_env_ <- Sys.getenv("LOGNAME")
 sys_platf_env_ <- Sys.getenv("R_PLATFORM")
