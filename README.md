@@ -12,7 +12,7 @@ cd kaggle-alchemy
 wget https://s3.amazonaws.com/h20-lotusx/train_df.csv
 wget  https://s3.amazonaws.com/h20-lotusx/test_df.csv
 
-Rscript Run.R
+Rscript script/Run.R
 ```
 
 # name-of-the-project-competition-or-demo
