@@ -38,7 +38,7 @@ library(plyr)
 library(dplyr)
 library(tidyr)
 library(data.table)
-library(DescTools)
+#library(DescTools) causes hard crash
 library(Matrix)
 library(glmnet)
 
