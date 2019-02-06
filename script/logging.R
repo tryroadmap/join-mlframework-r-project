@@ -3,8 +3,6 @@ kaggleAlchemyLogger <- function(){
 #ts(timestamp)
 #cat("hello kaggle alchemy") ps id number
 
-library(tidyverse)
-library(lubridate)
 
 timestamp_now_ <- now()
 sys_user_env_ <- Sys.getenv("LOGNAME")
@@ -19,7 +17,7 @@ logger_ <- data.frame("ts" = timestamp_now_,
                       "version"= version_r_
                       )
 # Writing log data
-write.table(logger_, file = "./../log/test_log.txt", append= TRUE, sep = "\t")
+write.table(logger_, file = paste0("log/","/test_log.txt"),
+            append= TRUE, sep = "\t")
 }
-
 kaggleAlchemyLogger()
