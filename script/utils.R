@@ -86,7 +86,7 @@ ka_input_transport <- function() {
 myIP_ = "localhost"
 myPort_ = 54321
 localH2O = h2o.init(nthreads = -1,
-                    max_mem_size = "10g",
+                    #max_mem_size = "3g",
                     ip = myIP_, port = myPort_, startH2O = TRUE)
 
 h2o.setTimezone("America/New_York")
