@@ -41,7 +41,6 @@ df.test <- df.split[[2]]
 #df.all.r <- as.data.frame(df.test)
 
 
-h2o.shutdown(prompt = TRUE) #=======END OF LINE ============================#
 
 
 
@@ -132,6 +131,8 @@ num_feats <- c(  #for now all features
 "Wdft_IsGamer"                                     ,
 "Wdft_RegionIdentifier"
 )
+
+h2o.shutdown(prompt = TRUE) #=======END OF LINE ============================#
 
 
 df_all_num_feats <- list()
