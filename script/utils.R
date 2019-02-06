@@ -24,6 +24,7 @@ if(install_packages == 1){
                      "data.table",
                      "DescTools",
                      "Matrix",
+                     "filesstrings",
                      "h20"))
 }
 
@@ -39,6 +40,8 @@ library(dplyr)
 library(tidyr)
 library(data.table)
 library(Matrix)
+library(filesstrings)
+
 library(h2o)
 
 # **************************************
@@ -62,6 +65,14 @@ Sum_value <- function(x) ifelse(sum(!is.na(x))==0, NA, sum(x, na.rm=TRUE))
 Max_value <- function(x) ifelse(is.infinite(max(x, na.rm=TRUE))==T, NA, max(x, na.rm=TRUE))
 Min_value <- function(x) ifelse(is.infinite(min(x, na.rm=TRUE))==T, NA, min(x, na.rm=TRUE))
 ka_print_size <- function(x) {print("Dim Value", paste0(dim(x))) }
+
+ka_input_transport <- function() {
+  input_files_ <- list.files(pattern = ".csv")
+  for (names in input_files_){
+    file.move(paste0(getwd(),"/","input","/",names), paste0(getwd(),"/","data","/",names))
+  }
+}
+    }
 
 # **************************************
 # h2o Cluster
