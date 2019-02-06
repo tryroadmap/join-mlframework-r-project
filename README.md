@@ -7,15 +7,18 @@ Features:
 * feature 3
 Note:
 
-### Summary of Approach
+### Summary of Your Approach
 
 
 
-### Setup
+### Setup Kaggle Alchemy
 git clone
+cd kaggle-alchemy
+wget https://s3.amazonaws.com/h20-lotusx/train_df.csv
+wget  https://s3.amazonaws.com/h20-lotusx/test_df.csv
 
-Please edit run.R and execute run.R.
-
+open Run.R in your favorite editor. 
 
 
 ### Acknowledgment
+![Data Source](https://www.kaggle.com/mlg-ulb/creditcardfraud)
