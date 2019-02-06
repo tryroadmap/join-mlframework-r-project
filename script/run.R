@@ -42,7 +42,7 @@ alchemyMLPipelineSetup <- function (pipelinename ="hello-ml-alchemy", pipelineve
   source("script/preprocessing.R")
   source("script/stacking.R")
   source("script/rfs_xgboost.R")
-  source("script/submission.R")
+  #source("script/submission.R")
 
 }
 

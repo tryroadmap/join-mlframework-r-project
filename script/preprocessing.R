@@ -132,22 +132,21 @@ num_feats <- c(  #for now all features
 "Wdft_RegionIdentifier"
 )
 
-h2o.shutdown(prompt = TRUE) #=======END OF LINE ============================#
 
-
-df_all_num_feats <- list()
-i <- 1
-for(feat in num_feats){
-  df_all_num_feats_ <- df_all[c("X1", feat)]
-  df_all_num_feats_$feature <- feat
-  df_all_num_feats_$value <- as.numeric(df_all_num_feats_[[feat]])
-  df_all_num_feats_ <- df_all_num_feats_[c("X1", "feature", "value")]
-  df_all_num_feats[[i]] <- df_all_num_feats_
-  i <- i + 1
-}
-df_all_num_feats <- bind_rows(df_all_num_feats)
-print("numeric feature")
-print(n_distinct(df_all_num_feats$feature))
+#
+# df_all_num_feats <- list()
+# i <- 1
+# for(feat in num_feats){
+#   df_all_num_feats_ <- df_all[c("X1", feat)]
+#   df_all_num_feats_$feature <- feat
+#   df_all_num_feats_$value <- as.numeric(df_all_num_feats_[[feat]])
+#   df_all_num_feats_ <- df_all_num_feats_[c("X1", "feature", "value")]
+#   df_all_num_feats[[i]] <- df_all_num_feats_
+#   i <- i + 1
+# }
+# df_all_num_feats <- bind_rows(df_all_num_feats)
+# print("numeric feature")
+# print(n_distinct(df_all_num_feats$feature))
 
 
 # # **************************************
@@ -177,17 +176,17 @@ print(n_distinct(df_all_num_feats$feature))
 # **************************************
 # feature binding template
 # **************************************
-df_all_feats <-
-  bind_rows(
-    df_all_num_feats
-    # sessions_action_se_mean,
-    # sessions_action_type_se_mean,
+# df_all_feats <-
+#   bind_rows(
+#     df_all_num_feats
+#     # sessions_action_se_mean,
+#     # sessions_action_type_se_mean,
+#
+#   )
+# print("feature number")
+# print(n_distinct(df_all_feats$feature))
 
-  )
-print("feature number")
-print(n_distinct(df_all_feats$feature))
-
-saveRDS(labels, paste0("cache/",folder,"/labels.RData"))
-saveRDS(sample_submission_NCI, paste0("cache/",folder,"/sample_submission_NCI.RData"))
-saveRDS(df_all, paste0("cache/",folder,"/df_all.RData"))
-saveRDS(df_all_feats, paste0("cache/",folder,"/df_all_feats.RData"))
+# saveRDS(labels, paste0("cache/",folder,"/labels.RData"))
+# saveRDS(sample_submission_NCI, paste0("cache/",folder,"/sample_submission_NCI.RData"))
+# saveRDS(df_all, paste0("cache/",folder,"/df_all.RData"))
+# saveRDS(df_all_feats, paste0("cache/",folder,"/df_all_feats.RData"))
