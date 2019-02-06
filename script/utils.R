@@ -24,7 +24,7 @@ if(install_packages == 1){
                      "data.table",
                      "DescTools",
                      "Matrix",
-                     "glmnet"))
+                     "h20"))
 }
 
 # load libraries
@@ -39,7 +39,7 @@ library(dplyr)
 library(tidyr)
 library(data.table)
 library(Matrix)
-
+library(h2o)
 
 # **************************************
 # functions
@@ -61,8 +61,23 @@ Mean_value <- function(x) ifelse(is.nan(mean(x, na.rm=TRUE))==T, NA, mean(x, na.
 Sum_value <- function(x) ifelse(sum(!is.na(x))==0, NA, sum(x, na.rm=TRUE))
 Max_value <- function(x) ifelse(is.infinite(max(x, na.rm=TRUE))==T, NA, max(x, na.rm=TRUE))
 Min_value <- function(x) ifelse(is.infinite(min(x, na.rm=TRUE))==T, NA, min(x, na.rm=TRUE))
+ka_print_size <- function(x) {print("Dim Value", paste0(dim(x))) }
 
+# **************************************
+# h2o Cluster
+# **************************************
 
+# Check connection with H2O and ensure local H2O R package matches server version.
+# Optionally ask for startH2O to start H2O if it’s not already running.
+# Note that for startH2O to work, the IP must be localhost and you must
+# have installed with the Windows or Mac installer package so H2O is in
+# a known place. startH2O requires the port to be 54321.
+myIP_ = "localhost"
+myPort_ = 54321
+localH2O = h2o.init(nthreads = -1,
+                    ip = myIP_, port = myPort_, startH2O = TRUE, silentUpgrade = FALSE, promptUpgrade = TRUE)
+
+h2o.setTimezone("America/New_York")
 
 # # **************************************
 # # Custome Measure: ndcg5 metric
