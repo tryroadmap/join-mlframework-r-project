@@ -7,7 +7,7 @@ The goal of this package is to build a:
 
 ### Setup Kaggle Alchemy
 ```
-git clone
+git clone https://github.com/lotusxai/kaggle-alchemy.git
 cd kaggle-alchemy
 wget https://s3.amazonaws.com/h20-lotusx/train_df.csv
 wget  https://s3.amazonaws.com/h20-lotusx/test_df.csv
