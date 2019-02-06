@@ -6,8 +6,7 @@ alchemyMLPipelineSetup <- function (pipelinename ="hello-ml-alchemy", pipelineve
   # stacking folders hosts all methods for stacking
   # rfs_xgboost hosts all hyper parameter tunning methods for random forest xgboost
 
-  print("working directory:", getwd())
-  print("logging at project-name/log/")
+  print(paste0("working directory:", getwd()))
 
   # **************************************
   # create directory
@@ -23,6 +22,12 @@ alchemyMLPipelineSetup <- function (pipelinename ="hello-ml-alchemy", pipelineve
   dir.create(paste0("cache/", pipelineversion, "/test"))
   dir.create(paste0("submit/", pipelineversion))
 
+  print("Kaggle Alchemy Directory:")
+  print("logging: /log/")
+  print("data input: /data/")
+  print("submission files: /submit/")
+  
+  
 
   # **************************************
   # run scripts
@@ -66,3 +71,4 @@ source("script/stacking.R")
 # rfs_xgboost.R template
 source("script/rfs_xgboost.R")
 source("script/submission.R")
+
