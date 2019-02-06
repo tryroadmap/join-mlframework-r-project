@@ -8,9 +8,10 @@
 #' for every project only change this file
 
 alchemyMLPipelineSetup <- function (pipelinename ="hello-ml-alchemy", pipelineversion="version_01"){
-  dir.create(pipelinename)
-  setwd(paste0(getwd(), "/", pipelinename))
-  sprintf("working directory: %s", getwd() )
+
+   dir.create(pipelinename) #put references for methos used here if needed.
+  # setwd(paste0(getwd(), "/", pipelinename))
+  # sprintf("working directory: %s", getwd() )
 
   # **************************************
   # create directory
