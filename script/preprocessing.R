@@ -3,10 +3,12 @@
 # **************************************
 
 
-mscompURL <- "https://s3.amazonaws.com/al-chemy/microsoft-malware-prediction/train.csv.zip"
-download.file(mscompURL, "train.zip")
-zipF<-file.choose()
-mscompURL <- unzip(zipF, file = mscompURL)
+#mscompURL <- "https://s3.amazonaws.com/al-chemy/microsoft-malware-prediction/train.csv.zip"
+#download.file(mscompURL, "train.zip")
+#zipF<-file.choose()
+#mscompURL <- unzip(zipF, file = mscompURL)
+mscompURL <- unzip(zipF, file = mscompURL) # TODO: grab any file in input folder and put it in data 
+
 df.hex <- h2o.importFile(path = mscompURL, destination_frame = "df.hex")
 
 

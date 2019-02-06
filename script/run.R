@@ -1,12 +1,13 @@
+#' alchemyMLPipelineSetup(@parm){..}
+#' The functions builds a template for starting the ML Pipelining project in R or RStudio.
+#'
+#' recommend one repo per version
+#' stacking folders hosts all methods for stacking
+#' rfs_xgboost hosts all hyper parameter tunning methods for random forest xgboost
+#' logging.R light package runs first closes last/crash
+#' for every project only change this file
 
 alchemyMLPipelineSetup <- function (pipelinename ="hello-ml-alchemy", pipelineversion="version_01"){
-  #The functions builds a template for starting the ML Pipelining project in R or RStudio.
-  #
-  # recommend one repo per version
-  # stacking folders hosts all methods for stacking
-  # rfs_xgboost hosts all hyper parameter tunning methods for random forest xgboost
-  # logging.R light package runs first closes last/crash
-
   getwdval <- getwd()
   sprintf("working directory: %s", getwdval )
 
