@@ -136,8 +136,8 @@ num_feats <- c(
   'V28',
   'Amount',
   'Class'
-
 )
+
 df_all_num_feats <- list()
 i <- 1
 for(feat in num_feats){
