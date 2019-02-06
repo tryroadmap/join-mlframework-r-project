@@ -10,7 +10,7 @@ options(dplyr.print_max = Inf)
 # **************************************
 # install package
 
-#install_packages <- 0
+install_packages <- 0
 if(install_packages == 1){
   install.packages(c("Hmisc",
                      "xgboost",
@@ -39,9 +39,6 @@ library(dplyr)
 library(tidyr)
 library(data.table)
 library(Matrix)
-library(glmnet)
-
-
 
 
 # **************************************

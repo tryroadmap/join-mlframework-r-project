@@ -17,7 +17,7 @@ logger_ <- data.frame("ts" = timestamp_now_,
                       "version"= version_r_
                       )
 # Writing log data
-write.table(logger_, file = paste0("log/","/test_log.txt"),
+write.table(logger_, file = paste0("log/","test_log.txt"),
             append= TRUE, sep = "\t")
 }
 kaggleAlchemyLogger()
