@@ -6,6 +6,8 @@ The goal of this package is to build a:
 
 
 ### Setup Kaggle Alchemy
+Download all your data to folder input. Kaggle Alchemy sees csv files inside folder input.
+
 ```
 git clone https://github.com/lotusxai/kaggle-alchemy.git
 cd kaggle-alchemy
@@ -13,7 +15,7 @@ wget https://s3.amazonaws.com/h20-lotusx/train_df.csv
 wget  https://s3.amazonaws.com/h20-lotusx/test_df.csv
 wget https://s3.amazonaws.com/al-chemy/microsoft-malware-prediction/train.csv.zip
 
-Rscript script/Run.R
+Rscript script/run.R
 ```
 
 # name-of-the-project-competition-or-demo

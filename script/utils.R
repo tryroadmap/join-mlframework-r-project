@@ -66,13 +66,19 @@ Max_value <- function(x) ifelse(is.infinite(max(x, na.rm=TRUE))==T, NA, max(x, n
 Min_value <- function(x) ifelse(is.infinite(min(x, na.rm=TRUE))==T, NA, min(x, na.rm=TRUE))
 ka_print_size <- function(x) {print("Dim Value", paste0(dim(x))) }
 
-ka_input_transport <- function() {
+# **************************************
+# Data: input >> data 
+# **************************************
+dir_rem_ <- getwd()
+ka_input_transport <- function(dir_rem_) {
+  setwd(paste0(getwd(),"/","input"))
   input_files_ <- list.files(pattern = ".csv")
   for (names in input_files_){
-    file.move(paste0(getwd(),"/","input","/",names), paste0(getwd(),"/","data","/",names))
+    file.move(paste0(getwd(),"/",names), paste0(dir_rem_,"/","data","/"))
   }
 }
 
+setwd(dir_rem_)
 
 # **************************************
 # h2o Cluster
