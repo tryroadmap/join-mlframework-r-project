@@ -64,10 +64,10 @@ Mean_value <- function(x) ifelse(is.nan(mean(x, na.rm=TRUE))==T, NA, mean(x, na.
 Sum_value <- function(x) ifelse(sum(!is.na(x))==0, NA, sum(x, na.rm=TRUE))
 Max_value <- function(x) ifelse(is.infinite(max(x, na.rm=TRUE))==T, NA, max(x, na.rm=TRUE))
 Min_value <- function(x) ifelse(is.infinite(min(x, na.rm=TRUE))==T, NA, min(x, na.rm=TRUE))
-ka_print_size <- function(x) {print("Dim Value", paste0(dim(x))) }
+ka_print_size <- function(x) {print(paste0("Dim ", (dim(x)))) }
 
 # **************************************
-# Data: input >> data 
+# Data: input >> data
 # **************************************
 dir_rem_ <- getwd()
 ka_input_transport <- function(dir_rem_) {

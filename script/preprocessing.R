@@ -30,15 +30,13 @@ df.hex <- h2o.importFile(path = mscompURL, destination_frame = "df.hex")
 
 # Split training/validation
 df.split <- h2o.splitFrame(data=df.hex, ratios=0.75)
-ka_print_size(df.split[[1]])
-ka_print_size(df.split[[2]]) #Validation dim
 
 # Create a training set from the 1st dataset in the split
 df.train <- df.split[[1]]
-
+ka_print_size(df.train) #Validation dim
 # Create a validation set from the 2nd dataset in the split
 df.test <- df.split[[2]]
-
+ka_print_size(df.test)
 #df.all.r <- as.data.frame(df.test)
 
 
