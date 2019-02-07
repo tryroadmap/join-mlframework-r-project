@@ -7,7 +7,7 @@
 #' logging.R light package runs first closes last/crash
 #' for every project only change this file
 
-alchemyMLPipelineSetup <- function (pipelinename ="hello-ml-alchemy", pipelineversion="version_01"){
+alchemyMLPipelineSetup <- function (pipelinename ="rushmutatenormalizeccfraudml", pipelineversion="version_01"){
 
    dir.create(pipelinename) #put references for methos used here if needed.
   # setwd(paste0(getwd(), "/", pipelinename))
@@ -40,12 +40,12 @@ alchemyMLPipelineSetup <- function (pipelinename ="hello-ml-alchemy", pipelineve
   # run scripts
   # **************************************
   source("script/logging.R")
-  source("script/utils.R")
-  source("script/preprocessing.R")
-  source("script/stacking.R")
-  source("script/rfs_xgboost.R")
+  #source("script/utils.R")
+  #source("script/preprocessing.R")
+  #source("script/stacking.R")
+  #source("script/rfs_xgboost.R")
   #source("script/submission.R")
 
 }
 
-alchemyMLPipelineSetup(pipelinename ="hello-ml-alchemy", pipelineversion="version_02")
+alchemyMLPipelineSetup(pipelinename ="rushmutatenormalizeccfraudml", pipelineversion="version_02")

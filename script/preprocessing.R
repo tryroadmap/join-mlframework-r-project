@@ -2,7 +2,7 @@
 # load data template
 # **************************************
 
-ka_input_transport()
+#ka_input_transport()
 
 #zipF<-file.choose()
 #mscompURL <- unzip(zipF, file = mscompURL)

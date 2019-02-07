@@ -78,6 +78,8 @@ ka_input_transport <- function(dir_rem_) {
   }
 }
 
+ka_input_transport() #TODO move to preproc
+
 setwd(dir_rem_)
 
 # **************************************
@@ -85,14 +87,14 @@ setwd(dir_rem_)
 # **************************************
 
 # Check connection with H2O and ensure local H2O R package matches server version.
-# Optionally ask for startH2O to start H2O if it’s not already running.
+# Optionally ask for startH2O to start H2O if itâs not already running.
 # Note that for startH2O to work, the IP must be localhost and you must
 # have installed with the Windows or Mac installer package so H2O is in
 # a known place. startH2O requires the port to be 54321.
-myIP_ = "localhost"
+myIP_ = "127.0.0.1"
 myPort_ = 54321
 localH2O = h2o.init(nthreads = -1,
-                    #max_mem_size = "3g",
+                    max_mem_size = "30g",
                     ip = myIP_, port = myPort_, startH2O = TRUE)
 
 h2o.setTimezone("America/New_York")

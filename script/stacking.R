@@ -21,9 +21,10 @@
 # make dataset for predict Class
 # **************************************
 
-response <- "HasDetections"
-predictors <- c("Census_IsFlightingInternal", "Census_ThresholdOptIn",
-                "Census_IsVirtualDevice", "Wdft_IsGamer")
+response <- "Class"
+predictors <- c("V17", "V12", "V16", "V11" ,"V18", "V14", "V7" , "V9",
+                "V10" ,"V26", "V4",  "V20" ,"V3" , "V27", "V21", "V8" , "V1", "Amount"
+                 )
 
 
 # X1_all <- subset(df_all_feats, is.na(value)==F)
@@ -77,13 +78,45 @@ predictors <- c("Census_IsFlightingInternal", "Census_ThresholdOptIn",
 # Predict Class
 # **************************************
 
+# **************************************
+# For EDA Run Automated MOdel
+# **************************************
+# Run the automated machine learning
+
+is_xgboost_available = H2OXGBoostEstimator.available()
+#h2o.estimators.xgboost.H2OXGBoostEstimator.available()
+
+
+models_h2o_max <- h2o.automl(
+  x = predictors,
+  y = response, # labels
+  training_frame    = df.train, # training
+  leaderboard_frame = df.test, # validation
+  max_runtime_secs  = 1000,
+  nfolds=6,
+  balance_classes = TRUE,
+  max_after_balance_size = 100,
+  #stopping_metric = "AUC",
+  seed = 1234,
+  project_name="auto_ml_top10var"
+
+)
+
+lb <- models_h2o_max@leaderboard
+automl_leader <- models_h2o@leader
+automl_leader
+h2o_predic <- h2o.predict(automl_leader, df.test)
+
 Folds <- 10
-df.glm <- h2o.glm(y = response,
-                        x = all_variants , #predictors
-                        training_frame=mscomp.train,
-                        family="binomial",
-                        nfolds=Folds,
-                        alpha=0.5)
+df.gbm <- h2o.gbm(y = response,
+                    x = predictors  ,
+                    training_frame=df.train,
+                  model_id ="gbm_top10_varimpo",
+                  keep_cross_validation_predictions = TRUE,
+                  balance_classes = TRUE,
+                    nfolds=Folds,
+                  learn_rate = 0.05,
+                  ntrees = 100, max_depth = 6, min_rows = 3)
 
 
 

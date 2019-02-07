@@ -129,14 +129,15 @@
 # **************************************
 
 
-pred = h2o.predict(object = msccomp.glm, newdata = mscomp.test) #CHANGE TO NEW TEST SET
+pred = h2o.predict(object = df.gbm, newdata = df.test) #CHANGE TO NEW TEST SET
 
 # View a summary of the prediction
 summary(pred)
 
 # Variable Importance
-h2o.varimp_plot(msccomp.glm)
+h2o.varimp_plot(df.gbm)
 
+h2o.confusionMatrix(df.gbm, df.train)
 
 h2o.shutdown(prompt = TRUE) #=======END OF LINE ============================#
 
