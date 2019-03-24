@@ -1,6 +1,6 @@
 # Kaggle alchemy
 
-[header img](README_files/kaggle_alschemy_art.png)
+[header img](README_files/kaggle_alchemy_art.png)
 The goal of this package is to build a:
 - standard file system for Kaggle participation.
 - versioning and documentation built in code.
