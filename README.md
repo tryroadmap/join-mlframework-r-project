@@ -1,6 +1,8 @@
 # Kaggle alchemy
+
+[header img](README_files/kaggle_alschemy_art.png)
 The goal of this package is to build a:
-- standard file system for kaggle participation.
+- standard file system for Kaggle participation.
 - versioning and documentation built in code.
 - connects to as many ML APIs as possible.
 
@@ -22,12 +24,9 @@ Rscript script/run.R
 
 version 0.0:
 Features:
-* feature 1
-* feature 2
-* feature 3
-Note:
-
-### Summary of Your Approach
+* builds cache, submit, data folder.
+* runs unit tests on dynamoDB, data S3 buckets and local data files.
+* prepares a base model and submits result in submit folder.
 
 
 
@@ -35,4 +34,4 @@ Note:
 
 
 ### Acknowledgment
-[Data Source](https://www.kaggle.com/mlg-ulb/creditcardfraud)
+[Data Source for CCFraud Demo](https://www.kaggle.com/mlg-ulb/creditcardfraud)
