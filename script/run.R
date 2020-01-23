@@ -7,7 +7,7 @@
 #' logging.R light package runs first closes last/crash
 #' for every project only change this file
 
-alchemyMLPipelineSetup <- function (pipelinename ="rushmutatenormalizeccfraudml", pipelineversion="version_01"){
+alchemyMLPipelineSetup <- function (pipelinename ="prj_name", pipelineversion="version_01"){
 
    dir.create(pipelinename) #put references for methos used here if needed.
   # setwd(paste0(getwd(), "/", pipelinename))
@@ -48,4 +48,4 @@ alchemyMLPipelineSetup <- function (pipelinename ="rushmutatenormalizeccfraudml"
 
 }
 
-alchemyMLPipelineSetup(pipelinename ="rushmutatenormalizeccfraudml", pipelineversion="version_02")
+alchemyMLPipelineSetup(pipelinename ="airbnb-tasks-rstudio-server", pipelineversion="version_00")
