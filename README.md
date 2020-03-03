@@ -39,7 +39,7 @@ Rscript script/run.R
 ```
 
 
-version 0.1:
+version 0.2:
 Features:
 * builds cache, submit, data folder for [AirBnB tasks](https://phillytalent.com/events/project-airbnb/).
 * runs unit tests on data S3 buckets.
